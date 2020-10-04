@@ -28,6 +28,8 @@ SITE_ROOT = os.path.join(BASE_DIR, 'site')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('polls/', include('polls.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),  # Add
+    path('autos/', include('autos.urls')),                   # Add
     url(r'^site/(?P<path>.*)$',serve,
         {'document_root':SITE_ROOT,'show_indexes': True},
         name='site_path'
